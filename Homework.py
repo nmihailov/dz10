@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[55]:
+# In[ ]:
 
 
 from pprint import pprint
@@ -41,10 +41,17 @@ class User:
         response = requests.get('https://api.vk.com/method/friends.getMutual', params)
         return response.json()
     
+    def __str__(self):
+        return 'https://vk.com/' + str(self.id)
+    
         
 user1 = User(id1)
 user2 = User(id2)
+
 rez = user1 & user2
+
+print(user1)
+print(user2)
 
 pprint(rez)
 
